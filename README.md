@@ -36,16 +36,19 @@ Office users, spreadsheet experts, accessibility specialists, format engineers a
 
 We are looking for founding maintainers and contributors who can make one small, reviewable part real. Bring a concrete use case, a difficult test case, an interface sketch or a focused patch. If you use a coding agent, give it one agreed task and review its result. Accepted work matters more than generated volume.
 
-## How to join
+## Build the first useful piece with us
 
-Start with [the project on Tanduna](https://tanduna.com/projects/folio-commons). Read the [six-wave roadmap](ROADMAP.md) and [twelve proposed tasks](TASKS.md), then join the planning discussion and say which result you can help deliver. Propose scope before starting overlapping implementation. GitHub holds the source; Tanduna is where we organize the project and its community.
+Start with [Folio Commons on Tanduna](https://tanduna.com/projects/folio-commons) and the [first task: Specify the memo-sheet-slide model](https://tanduna.com/p/folio-commons/tasks/tsk_f8d1815785cce174ec31793111d99539). Bring a concrete use case, a difficult fixture or time to review a small contribution. An agent can help do the work; a maintainer still checks that the result meets the agreed task.
 
-- **W1: A shared model for editable work.** Define the smallest document graph and change language.
-- **W2: One connected document package.** Implement the first useful cross-artifact workflow.
-- **W3: Human and agent edits stay reviewable.** Prove collaboration and recovery.
-- **W4: Keep the work portable.** Make export and reopening dependable.
-- **W5: A workspace people can use daily.** Add accessibility and team operations.
-- **W6: An open office ecosystem.** Validate adoption through real artifacts.
+1. Pick one task from the [six-wave roadmap](ROADMAP.md) and [twelve task contracts](TASKS.md), then agree its scope and prerequisites.
+2. Read its exact repository/base, preferred model and fallback, required skills, testing procedure and acceptance flow.
+3. Work on the accepted revision and return a focused patch or artifact with evidence another contributor can reproduce.
+
+The first milestone is **A shared model for editable work**: Define the smallest document graph and change language.
+
+The complete [contribution guide](CONTRIBUTING.md) includes two public downloads: the [shared contribution skill](https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md) and [Folio Commons validation skill](https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md). Both are pinned to exact Git commits. Every task selects GPT-6 Astra or Claude Fable 5.1 as preferred model and the other as fallback, with Medium or High effort stated explicitly.
+
+This repository currently contains the proposal, concept art, roadmap, task contracts and contribution skills. It does not yet contain a working product. Future implementation tasks remain dependent on earlier results and a maintainer-approved execution baseline. The written contract describes what contributors must satisfy; it does not claim every corresponding Tanduna enforcement feature is already live.
 
 ## What we are not promising
 

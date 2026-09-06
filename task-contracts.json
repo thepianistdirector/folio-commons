@@ -1,0 +1,723 @@
+{
+  "project": "folio-commons",
+  "schema": "maintainer-authored-contract-v1",
+  "platformEnforcement": "Not claimed by this document; verify the current Tanduna task revision and production capabilities.",
+  "tasks": [
+    {
+      "taskKey": "W1-T1",
+      "taskId": "tsk_f8d1815785cce174ec31793111d99539",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_f8d1815785cce174ec31793111d99539",
+      "title": "Specify the memo-sheet-slide model",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Maintainer accepts the scoped design protocol; this is not product implementation.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "medium"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "medium"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A single source value can be traced to its uses in a memo and a slide.",
+        "Operations distinguish proposed changes from accepted document state."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Trace typed values from a source sheet into a memo and slide. Change one input, explain update propagation, and include a stale reference, cycle and unsupported formula in the model walkthrough.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W1-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W1-T2",
+      "taskId": "tsk_5c11367cee5234bbd0a3253fb197fadc",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_5c11367cee5234bbd0a3253fb197fadc",
+      "title": "Create compatibility and conflict fixtures",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Each fixture declares expected round-trip behavior and unsupported features.",
+        "Conflicting human and agent edits have a visible resolution outcome."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Create fixtures for concurrent edits, unsupported formatting/formulas and broken links. Define preserved editable data and visible diagnostics for each, including a successful and lossy external-format example.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W1-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W2-T1",
+      "taskId": "tsk_df6acad51010093596d265814de910b6",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_df6acad51010093596d265814de910b6",
+      "title": "Build the source spreadsheet and linked memo",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Editing a source cell updates its declared dependents without changing unrelated content.",
+        "Invalid formulas and missing references appear as errors rather than invented values."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Edit a source cell and inspect its formula and linked memo text. Break a reference and enter an unsupported formula; verify clear diagnostics and preservation of unrelated source content.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W2-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W2-T2",
+      "taskId": "tsk_ef1b3343c4fe2dc1e607e14efc1c840e",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_ef1b3343c4fe2dc1e607e14efc1c840e",
+      "title": "Build the linked slide view",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "The displayed chart can be traced to its source cells.",
+        "Users can change presentation without silently modifying the underlying data."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Change a source value and inspect the linked slide and editable source. Resize and navigate with keyboard; verify the displayed value is current and the slide has not become an uneditable image.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W2-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W3-T1",
+      "taskId": "tsk_b049bda217180d6ac33c49b74d5db042",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_b049bda217180d6ac33c49b74d5db042",
+      "title": "Implement change proposals and selective acceptance",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A user can accept one proposed edit and reject another independently.",
+        "An agent cannot bypass the document's editing permissions."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Propose changes spanning a sheet, memo and slide. Accept one and reject another; compare unaffected artifacts and inspect source lineage with a second actor reviewing the same proposal.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W3-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W3-T2",
+      "taskId": "tsk_e3b1425fe23fefe86a431646f8748ce3",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_e3b1425fe23fefe86a431646f8748ce3",
+      "title": "Implement undo and concurrent edit recovery",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Undo restores the intended prior state without erasing another collaborator's unrelated work.",
+        "Reconnect surfaces incompatible edits instead of silently overwriting them."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Make concurrent changes from two actors, then undo one accepted edit. Verify the other actor's work survives; disconnect/reconnect and compare the recovered artifact graph.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W3-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W4-T1",
+      "taskId": "tsk_13d5641de4f57776808274ae1a381b0f",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_13d5641de4f57776808274ae1a381b0f",
+      "title": "Publish the open package format",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A clean installation reopens the reference package with working links.",
+        "The format has a versioned migration path and clear asset licensing metadata."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Export the native package and reopen in a clean workspace. Compare types, formulas, links, formatting and attribution; exercise an unsupported version and missing referenced artifact.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W4-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W4-T2",
+      "taskId": "tsk_0f549bda0829135a70617f971fc4adf8",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_0f549bda0829135a70617f971fc4adf8",
+      "title": "Implement a bounded external format bridge",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Supported fixtures round-trip without undisclosed semantic loss.",
+        "Unsupported content is reported before a destructive conversion."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Round-trip the declared supported subset through the external format. Include one unsupported feature and verify an explicit loss/unsupported report without claiming full format fidelity.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W4-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W5-T1",
+      "taskId": "tsk_173ddfa47406ff8302ce3e188c44b487",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_173ddfa47406ff8302ce3e188c44b487",
+      "title": "Test editing with diverse input needs",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Users can complete the reference edit-review-export workflow without a pointer.",
+        "Observed barriers are fixed and retested on the affected flow."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Complete selecting, editing, reviewing and undoing across all three artifact types using each claimed input/accessibility mode. Retain observed barriers and corrections, including keyboard-only review.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W5-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W5-T2",
+      "taskId": "tsk_4078e501aad6a6d1da387b6ac9eb9220",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_4078e501aad6a6d1da387b6ac9eb9220",
+      "title": "Add self-hosted collaboration and recovery",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A restored workspace preserves permissions and document dependencies.",
+        "Revoked collaborators cannot retrieve later document revisions."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Have a second operator install the collaboration service, edit with two users and restore a disposable backup. Compare restored links and accepted changes; exercise interrupted save recovery.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W5-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W6-T1",
+      "taskId": "tsk_cea6b6913209ce77e89af7160d3c4cd8",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_cea6b6913209ce77e89af7160d3c4cd8",
+      "title": "Pilot reports with working teams",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Record editing effort, compatibility failures and trust in proposed changes.",
+        "Publish anonymized findings and revise scope before expanding formats."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Observe a consented working team preparing a real bounded report. Track stale-data errors, correction time, review decisions and export friction; publish only sanitized evidence and actual usage.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W6-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W6-T2",
+      "taskId": "tsk_81bfa47a382037709147475df9227b28",
+      "taskUrl": "https://tanduna.com/p/folio-commons/tasks/tsk_81bfa47a382037709147475df9227b28",
+      "title": "Publish extension contracts and examples",
+      "repositoryUrl": "https://github.com/thepianistdirector/folio-commons",
+      "baseBranch": "main",
+      "planningBaseCommit": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "folio-commons-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/folio-commons/8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2/.agents/skills/folio-commons-validation/SKILL.md",
+          "version": "8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Two independent extensions use the public contracts.",
+        "A faulty extension can be disabled without losing editable document content."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Build a second extension from the published contract and run valid, malformed and incompatible-version examples. Verify it preserves typed editable content and reports unsupported capabilities.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 8d5b3044dcc43c9ea79743d0139f6f8f6f0f4af2"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W6-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    }
+  ]
+}
