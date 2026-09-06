@@ -114,7 +114,8 @@
       ],
       "dependencies": [
         "W1-T1",
-        "W1-T2"
+        "W1-T2",
+        "W2-T1"
       ],
       "status": "PLANNED",
       "body": "Render a small chart and narrative linked to the same source model.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -146,7 +147,8 @@
       ],
       "dependencies": [
         "W2-T1",
-        "W2-T2"
+        "W2-T2",
+        "W3-T1"
       ],
       "status": "PLANNED",
       "body": "Define operation history, offline changes and conflict resolution.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -178,7 +180,8 @@
       ],
       "dependencies": [
         "W3-T1",
-        "W3-T2"
+        "W3-T2",
+        "W4-T1"
       ],
       "status": "PLANNED",
       "body": "Select a narrow import/export subset with explicit compatibility fixtures.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."

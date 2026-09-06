@@ -152,7 +152,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W2-T2 — Build the linked slide view
 
-**Wave:** W2 · **Prerequisites:** W1-T1, W1-T2
+**Wave:** W2 · **Prerequisites:** W1-T1, W1-T2, W2-T1
 
 Render a small chart and narrative linked to the same source model.
 
@@ -248,7 +248,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W3-T2 — Implement undo and concurrent edit recovery
 
-**Wave:** W3 · **Prerequisites:** W2-T1, W2-T2
+**Wave:** W3 · **Prerequisites:** W2-T1, W2-T2, W3-T1
 
 Define operation history, offline changes and conflict resolution.
 
@@ -344,7 +344,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W4-T2 — Implement a bounded external format bridge
 
-**Wave:** W4 · **Prerequisites:** W3-T1, W3-T2
+**Wave:** W4 · **Prerequisites:** W3-T1, W3-T2, W4-T1
 
 Select a narrow import/export subset with explicit compatibility fixtures.
 
