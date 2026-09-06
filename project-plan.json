@@ -1,0 +1,251 @@
+{
+  "name": "Folio Commons",
+  "slug": "folio-commons",
+  "stage": "Planning only — no product implementation",
+  "waves": [
+    {
+      "id": "W1",
+      "title": "A shared model for editable work",
+      "outcome": "Define the smallest document graph and change language.",
+      "taskIds": [
+        "W1-T1",
+        "W1-T2"
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "One connected document package",
+      "outcome": "Implement the first useful cross-artifact workflow.",
+      "taskIds": [
+        "W2-T1",
+        "W2-T2"
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Human and agent edits stay reviewable",
+      "outcome": "Prove collaboration and recovery.",
+      "taskIds": [
+        "W3-T1",
+        "W3-T2"
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Keep the work portable",
+      "outcome": "Make export and reopening dependable.",
+      "taskIds": [
+        "W4-T1",
+        "W4-T2"
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "A workspace people can use daily",
+      "outcome": "Add accessibility and team operations.",
+      "taskIds": [
+        "W5-T1",
+        "W5-T2"
+      ]
+    },
+    {
+      "id": "W6",
+      "title": "An open office ecosystem",
+      "outcome": "Validate adoption through real artifacts.",
+      "taskIds": [
+        "W6-T1",
+        "W6-T2"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "W1-T1",
+      "wave": "W1",
+      "title": "Specify the memo-sheet-slide model",
+      "goal": "Model cells, paragraphs, charts, references and typed edit operations.",
+      "acceptanceCriteria": [
+        "A single source value can be traced to its uses in a memo and a slide.",
+        "Operations distinguish proposed changes from accepted document state."
+      ],
+      "dependencies": [],
+      "status": "PLANNED",
+      "body": "Model cells, paragraphs, charts, references and typed edit operations.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W1-T2",
+      "wave": "W1",
+      "title": "Create compatibility and conflict fixtures",
+      "goal": "Build small examples of formulas, references, concurrent edits and broken links.",
+      "acceptanceCriteria": [
+        "Each fixture declares expected round-trip behavior and unsupported features.",
+        "Conflicting human and agent edits have a visible resolution outcome."
+      ],
+      "dependencies": [
+        "W1-T1"
+      ],
+      "status": "PLANNED",
+      "body": "Build small examples of formulas, references, concurrent edits and broken links.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W2-T1",
+      "wave": "W2",
+      "title": "Build the source spreadsheet and linked memo",
+      "goal": "Implement the bounded cell model, formula subset and referenced text blocks.",
+      "acceptanceCriteria": [
+        "Editing a source cell updates its declared dependents without changing unrelated content.",
+        "Invalid formulas and missing references appear as errors rather than invented values."
+      ],
+      "dependencies": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Implement the bounded cell model, formula subset and referenced text blocks.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W2-T2",
+      "wave": "W2",
+      "title": "Build the linked slide view",
+      "goal": "Render a small chart and narrative linked to the same source model.",
+      "acceptanceCriteria": [
+        "The displayed chart can be traced to its source cells.",
+        "Users can change presentation without silently modifying the underlying data."
+      ],
+      "dependencies": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Render a small chart and narrative linked to the same source model.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W3-T1",
+      "wave": "W3",
+      "title": "Implement change proposals and selective acceptance",
+      "goal": "Expose typed operations to a reference agent integration with a human review surface.",
+      "acceptanceCriteria": [
+        "A user can accept one proposed edit and reject another independently.",
+        "An agent cannot bypass the document's editing permissions."
+      ],
+      "dependencies": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Expose typed operations to a reference agent integration with a human review surface.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W3-T2",
+      "wave": "W3",
+      "title": "Implement undo and concurrent edit recovery",
+      "goal": "Define operation history, offline changes and conflict resolution.",
+      "acceptanceCriteria": [
+        "Undo restores the intended prior state without erasing another collaborator's unrelated work.",
+        "Reconnect surfaces incompatible edits instead of silently overwriting them."
+      ],
+      "dependencies": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Define operation history, offline changes and conflict resolution.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W4-T1",
+      "wave": "W4",
+      "title": "Publish the open package format",
+      "goal": "Export document structure, sources and revision metadata in a documented format.",
+      "acceptanceCriteria": [
+        "A clean installation reopens the reference package with working links.",
+        "The format has a versioned migration path and clear asset licensing metadata."
+      ],
+      "dependencies": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Export document structure, sources and revision metadata in a documented format.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W4-T2",
+      "wave": "W4",
+      "title": "Implement a bounded external format bridge",
+      "goal": "Select a narrow import/export subset with explicit compatibility fixtures.",
+      "acceptanceCriteria": [
+        "Supported fixtures round-trip without undisclosed semantic loss.",
+        "Unsupported content is reported before a destructive conversion."
+      ],
+      "dependencies": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Select a narrow import/export subset with explicit compatibility fixtures.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W5-T1",
+      "wave": "W5",
+      "title": "Test editing with diverse input needs",
+      "goal": "Evaluate keyboard navigation, screen reader output, zoom and non-color feedback.",
+      "acceptanceCriteria": [
+        "Users can complete the reference edit-review-export workflow without a pointer.",
+        "Observed barriers are fixed and retested on the affected flow."
+      ],
+      "dependencies": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Evaluate keyboard navigation, screen reader output, zoom and non-color feedback.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W5-T2",
+      "wave": "W5",
+      "title": "Add self-hosted collaboration and recovery",
+      "goal": "Implement team access, backups and restoration for the supported package model.",
+      "acceptanceCriteria": [
+        "A restored workspace preserves permissions and document dependencies.",
+        "Revoked collaborators cannot retrieve later document revisions."
+      ],
+      "dependencies": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Implement team access, backups and restoration for the supported package model.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W6-T1",
+      "wave": "W6",
+      "title": "Pilot reports with working teams",
+      "goal": "Observe a bounded set of real consented reports from source data to final export.",
+      "acceptanceCriteria": [
+        "Record editing effort, compatibility failures and trust in proposed changes.",
+        "Publish anonymized findings and revise scope before expanding formats."
+      ],
+      "dependencies": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Observe a bounded set of real consented reports from source data to final export.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W6-T2",
+      "wave": "W6",
+      "title": "Publish extension contracts and examples",
+      "goal": "Enable templates, renderers and agent clients without unrestricted document access.",
+      "acceptanceCriteria": [
+        "Two independent extensions use the public contracts.",
+        "A faulty extension can be disabled without losing editable document content."
+      ],
+      "dependencies": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Enable templates, renderers and agent clients without unrestricted document access.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    }
+  ]
+}
